@@ -1,5 +1,6 @@
 package br.univille.estd.queues.node;
 
+import br.univille.estd.queues.EmptyQueueException;
 import br.univille.estd.queues.Queue;
 
 public class NodeQueue<E> implements Queue<E> {
@@ -14,32 +15,48 @@ public class NodeQueue<E> implements Queue<E> {
 
 	@Override
 	public long size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return (head== null);
 	}
 
 	@Override
 	public void enqueue(E e) {
-		// TODO Auto-generated method stub
+		Node<E> v = new Node();
 		
+		if(size() == 0) {
+			head = v;
+		}else {
+			tail.setNext(v);
+		}
+		tail = v;
+		size++;
 	}
 
 	@Override
 	public E dequeue() {
-		// TODO Auto-generated method stub
-		return null;
+		E temp;
+		if(isEmpty()) {
+			throw new EmptyQueueException("A fila está vazia");
+		}
+		temp = head.getElement();
+		head = head.getNext();
+		size = size - 1;
+		if(isEmpty()) {
+			tail = null;
+		}
+		return temp;
 	}
 
 	@Override
 	public E front() {
-		// TODO Auto-generated method stub
-		return null;
+		if(isEmpty()) {
+			throw new EmptyQueueException("A fila está vazia");
+		}
+		return head.getElement();
 	}
 
 }
