@@ -34,7 +34,7 @@ public class NodeQueueTests {
 		Queue<Integer> queue = new NodeQueue<Integer>();
 		queue.enqueue(10);
 		queue.enqueue(15);
-		assertEquals("Front deve retornar o elemento 15",15,(int)queue.front());
+		assertEquals("Front deve retornar o elemento 10",10,(int)queue.front());
 	}
 	
 	@Test
@@ -42,7 +42,7 @@ public class NodeQueueTests {
 		Queue<Integer> queue = new NodeQueue<Integer>();
 		queue.enqueue(10);
 		queue.enqueue(15);
-		assertEquals("Front deve retornar o elemento 15",15,(int)queue.dequeue());
+		assertEquals("Front deve retornar o elemento 10",10,(int)queue.dequeue());
 		assertEquals("Fila deve conter um elemento",1,queue.size());
 	}
 	

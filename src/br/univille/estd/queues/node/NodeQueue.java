@@ -25,7 +25,7 @@ public class NodeQueue<E> implements Queue<E> {
 
 	@Override
 	public void enqueue(E e) {
-		Node<E> v = new Node();
+		Node<E> v = new Node<E>(e, null);
 		
 		if(size() == 0) {
 			head = v;
