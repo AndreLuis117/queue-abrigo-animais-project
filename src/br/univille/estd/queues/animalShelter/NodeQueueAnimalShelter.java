@@ -1,39 +1,43 @@
 package br.univille.estd.queues.animalShelter;
 
 import br.univille.estd.queues.EmptyQueueException;
+import br.univille.estd.queues.node.Node;
 import br.univille.estd.queues.node.NodeQueue;
 
 public class NodeQueueAnimalShelter extends NodeQueue<Pet> {
 	
-	public void enqueue(Pet pet) {
-		super.enqueue(pet);
+	public static int numero = 0;
+	private NodeQueueCat nodeQueueCat = new NodeQueueCat();
+	private NodeQueueDog nodeQueueDog = new NodeQueueDog();
+	
+	
+	public long size() {
+		return nodeQueueCat.size() + nodeQueueDog.size();
 	}
 	
-	/*
-	public E dequeue() {
-		E temp;
-		if(isEmpty()) {
-			throw new EmptyQueueException("A fila está vazia");
-		}
-		temp = head.getElement();
-		head = head.getNext();
-		size = size - 1;
-		if(isEmpty()) {
-			tail = null;
-		}
-		return temp;
+	public void enqueue(Pet pet) {
+		pet.setTempo(numero);
+		numero++;
+		if(pet instanceof Dog) {
+			nodeQueueDog.enqueue(pet);
+		}else {nodeQueueCat.enqueue(pet);}
 	}
-	*/
+	
 	
 	public Pet dequeueAny() {
-		super.dequeue();
+		
+		if(nodeQueueCat.front().getTempo() < nodeQueueDog.front().getTempo() ) {
+			return nodeQueueCat.dequeue();
+		}else {
+			return nodeQueueDog.dequeue();
+			}
 	}
 	
 	public Pet dequeueCat() {
-		super.dequeue();
+		return nodeQueueCat.dequeue();
 	}
 	
 	public Pet dequeueDog() {
-		super.dequeue();
+		return nodeQueueDog.dequeue();
 	}
 }
