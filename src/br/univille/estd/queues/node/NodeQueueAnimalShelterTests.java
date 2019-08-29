@@ -28,8 +28,12 @@ public class NodeQueueAnimalShelterTests {
 		NodeQueueAnimalShelter abrigo = new NodeQueueAnimalShelter();
 		Pet cao = new Dog();
 		Pet gato = new Cat();
+		Pet cao2 = new Dog();
+		Pet gato2 = new Cat();
 		abrigo.enqueue(cao);
 		abrigo.enqueue(gato);
+		abrigo.enqueue(cao2);
+		abrigo.enqueue(gato2);
 		assertEquals("Front deve retornar o elemento cao",cao,(Dog)abrigo.dequeueAny());
 	}
 	
@@ -38,8 +42,12 @@ public class NodeQueueAnimalShelterTests {
 		NodeQueueAnimalShelter abrigo = new NodeQueueAnimalShelter();
 		Pet cao = new Dog();
 		Pet gato = new Cat();
+		Pet cao2 = new Dog();
+		Pet gato2 = new Cat();
 		abrigo.enqueue(cao);
 		abrigo.enqueue(gato);
+		abrigo.enqueue(cao2);
+		abrigo.enqueue(gato2);
 		assertEquals("Front deve retornar o elemento cao",cao,(Dog)abrigo.dequeueDog());
 	}
 	
@@ -48,8 +56,12 @@ public class NodeQueueAnimalShelterTests {
 		NodeQueueAnimalShelter abrigo = new NodeQueueAnimalShelter();
 		Pet cao = new Dog();
 		Pet gato = new Cat();
+		Pet cao2 = new Dog();
+		Pet gato2 = new Cat();
 		abrigo.enqueue(cao);
 		abrigo.enqueue(gato);
+		abrigo.enqueue(cao2);
+		abrigo.enqueue(gato2);
 		assertEquals("Front deve retornar o elemento cao",gato,(Cat)abrigo.dequeueCat());
 	}
 
