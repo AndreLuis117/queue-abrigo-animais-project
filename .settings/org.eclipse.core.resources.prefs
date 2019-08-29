@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/br/univille/estd/queues/EmptyQueueException.java=UTF-8
+encoding//src/br/univille/estd/queues/Queue.java=UTF-8
+encoding//src/br/univille/estd/queues/array/ArrayQueue.java=UTF-8
+encoding//src/br/univille/estd/queues/array/ArrayQueueTests.java=UTF-8
+encoding//src/br/univille/estd/queues/array/FullQueueException.java=UTF-8
+encoding//src/br/univille/estd/queues/node/Node.java=UTF-8
+encoding//src/br/univille/estd/queues/node/NodeQueue.java=UTF-8
+encoding//src/br/univille/estd/queues/node/NodeQueueTests.java=UTF-8
